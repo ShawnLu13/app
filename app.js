@@ -58,6 +58,9 @@ app.get('/manufacture', (req, res) => {
 app.get('/customer', (req, res) => {
   res.render('customer');
 });
+app.get('/sales', (req, res) => {
+  res.render('sales');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

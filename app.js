@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 路由配置
+// 首页+表单路由
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/query', customerRouter); //revised
@@ -34,6 +34,30 @@ app.use('/sales_succ', salesRouter); //revised
 app.use('/logistian1', logistian1Router); //ok
 app.use('/logistian2', logistian2Router); //ok
 app.use('/logistian3', logistian3Router); //ok
+
+// 跳转路由
+app.use('/role', indexRouter);
+app.get('/customer', (req, res) => {
+  res.render('customer');
+});
+app.get('/lo_1', (req, res) => {
+  res.render('lo_1');
+});
+app.get('/lo_1_1', (req, res) => {
+  res.render('lo_1_1');
+});
+app.get('/lo_1_2', (req, res) => {
+  res.render('lo_1_2');
+});
+app.get('/lo_1_3', (req, res) => {
+  res.render('lo_1_3');
+});
+app.get('/manufacture', (req, res) => {
+  res.render('/manufacture');
+});
+app.get('/customer', (req, res) => {
+  res.render('/customer');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

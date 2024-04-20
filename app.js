@@ -53,10 +53,10 @@ app.get('/lo_1_3', (req, res) => {
   res.render('lo_1_3');
 });
 app.get('/manufacture', (req, res) => {
-  res.render('/manufacture');
+  res.render('manufacture');
 });
 app.get('/customer', (req, res) => {
-  res.render('/customer');
+  res.render('customer');
 });
 
 // catch 404 and forward to error handler

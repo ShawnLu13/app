@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Update Result</title>
+        <link rel="stylesheet" href="../assets/style.css">
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f5f5f5;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+                background-image: url('/static/image/manufacturing.jpeg'); /* 添加背景图片 */
+                background-size: cover; /* 确保背景图片完全覆盖整个页面 */
+                background-position: center; /* 背景图片居中显示 */
+                background-attachment: fixed; /* 背景图片固定，不随页面滚动 */
+                background-color: #bdefcd; /* 设置一个背景颜色，以防图片加载失败 */
+            }
+            h1 {
+                color: #1f15e8;
+                font-size: 36px;
+                text-align: center;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            }
+            h2 {
+                color: #652aed;
+                font-size: 28px;
+                margin-top: 20px;
+                text-align: center;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            }
+            h3 {
+                color: #ed882a;
+                font-size: 20px;
+                margin-top: 20px;
+                text-align: center;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            }
+            /* 其他样式保持不变 */
+            form {
+                border-radius: 8px;
+                max-width: 500px;
+                margin: 20px auto;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .transparent-box {
+                border-radius: 8px;
+                max-width: 500px;
+                margin: 20px auto;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            p {
+                margin: 1em 0 0.5em;
+                color: #333;
+                font-size: 1.2em;
+                text-align: center;
+            }
+            input, button, .button-link {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box; /* Added box-sizing */
+            }
+            button, .button-link {
+                background-color: #28a745;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+                text-align: center;
+                display: inline-block;
+                text-decoration: none; /* Remove underline from links */
+            }
+            button:hover, .button-link:hover {
+                background-color: #f99350;
+            }
+        </style>
+    </head>
+<body>
+    <h1>Logistician Information</h1>
+    <h2>Update Result</h2>
+    <div class="transparent-box">
+        <p>You have updated one product successfully!</p>
+        <p></p>
+        <a href="/views/logistics.ejs" class="button-link">Return to Homepage</a>
+    </div>
+ </body>
+
+ </html>

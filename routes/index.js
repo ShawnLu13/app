@@ -9,7 +9,7 @@ var data = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', data);
+  res.render('role', data);
 });
 
 module.exports = router;

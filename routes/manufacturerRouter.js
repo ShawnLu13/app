@@ -16,10 +16,10 @@ var options = {
     peer_url: 'grpcs://localhost:7051',//因为启用了TLS，所以是grpcs,如果没有启用TLS，那么就是grpc 
     event_url: 'grpcs://localhost:7053',//因为启用了TLS，所以是grpcs,如果没有启用TLS，那么就是grpc 
     orderer_url: 'grpcs://localhost:7050',//因为启用了TLS，所以是grpcs,如果没有启用TLS，那么就是grpc 
-    privateKeyFolder:'/home/liang/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore', 
-    signedCert:'/home/liang/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem', 
-    peer_tls_cacerts:'/home/liang/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt', 
-    orderer_tls_cacerts:'/home/liang/fabric-samples/first-network/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt', 
+    privateKeyFolder:'/home/sheng/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore', 
+    signedCert:'/home/sheng/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem', 
+    peer_tls_cacerts:'/home/sheng/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt', 
+    orderer_tls_cacerts:'/home/sheng/fabric-samples/first-network/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt', 
     server_hostname: "peer0.org1.example.com" 
 };
 
@@ -51,7 +51,7 @@ router.post('/', function(req, res, next) {
            } 
   //以上代码指定了当前用户的私钥，证书等基本信息 
   return sdkUtils.newKeyValueStore({ 
-                          path: "/home/liang/fabric-client-stateStore/" 
+                          path: "/home/sheng/fabric-client-stateStore/" 
                   }).then((store) => { 
                           client.setStateStore(store) 
                           return client.createUser(createUserOpt) 

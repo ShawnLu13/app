@@ -13,9 +13,9 @@ var options = {
     channel_id: 'mychannel', 
     chaincode_id: 'usedcars', 
     network_url: 'grpcs://localhost:7051',//如果启用了TLS，就是grpcs，如果没有启用TLS，那么就是grpc 
-    privateKeyFolder:'/home/liang/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore', 
-    signedCert:'/home/liang/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem', 
-    peer_tls_cacerts:'/home/liang/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt', 
+    privateKeyFolder:'/home/sheng/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore', 
+    signedCert:'/home/sheng/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem', 
+    peer_tls_cacerts:'/home/sheng/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt', 
     server_hostname: "peer0.org1.example.com" 
 };
 
@@ -45,7 +45,7 @@ router.post('/', function(req, res, next) {
         }
         //以上代码指定了当前用户的私钥，证书等基本信息 
         return sdkUtils.newKeyValueStore({
-            path: "/home/liang/fabric-client-stateStore/" 
+            path: "/home/sheng/fabric-client-stateStore/" 
         }).then((store) => {
             client.setStateStore(store) 
             return client.createUser(createUserOpt) 

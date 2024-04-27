@@ -176,7 +176,7 @@ router.post('/', function(req, res, next) {
   }).then((response) => {
       if (response.status === 'SUCCESS') { 
           console.log('Successfully sent transaction to the orderer.'); 
-          res.render('register', []);
+          res.render('register', {});
           return tx_id.getTransactionID(); 
       } else { 
           console.error('Failed to order the transaction. Error code: ' + response.status); 

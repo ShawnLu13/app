@@ -23,7 +23,7 @@ var options = {
     server_hostname: "peer0.org1.example.com" 
 };
 
-router.post('/manufacture', function(req, res, next) {
+router.post('/', function(req, res, next) {
   var channel = {}; 
   var client = null; 
   var targets = []; 
@@ -176,7 +176,7 @@ router.post('/manufacture', function(req, res, next) {
   }).then((response) => {
       if (response.status === 'SUCCESS') { 
           console.log('Successfully sent transaction to the orderer.'); 
-          res.render('register', []);
+          res.render('register');
           return tx_id.getTransactionID(); 
       } else { 
           console.error('Failed to order the transaction. Error code: ' + response.status); 

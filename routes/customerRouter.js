@@ -90,21 +90,21 @@ router.post('/', function(req, res, next) {
     }).then((data) => {
       var data_list = data.split('&');
       var temp_data = {
-        'Product': data_list[0],
-        'Product Type': data_list[1],
-        'Product Description': data_list[2],
-        'Production Time': data_list[3],
-        'Manufacturer': data_list[4],
-        'Manufacturer Address': data_list[5],
-        'Sales Time': data_list[6],
-        'Sales Location': data_list[7],
-        'Sales Price': data_list[8],
-        'Start Address': data_list[9],
-        'Time 1': data_list[10],
-        'Address 2': data_list[11],
-        'Time 2': data_list[12],
-        'Last Address': data_list[13],
-        'Time 3': data_list[14],
+        'product-id': data_list[0],
+        'product-type': data_list[1],
+        'product-description': data_list[2],
+        'production-time': data_list[3],
+        'manufacturer': data_list[4],
+        'manufacturer-address': data_list[5],
+        'sales-time': data_list[6],
+        'sales-location': data_list[7],
+        'sales-price': data_list[8],
+        'start-address': data_list[9],
+        'time-1': data_list[10],
+        'address-2': data_list[11],
+        'time-2': data_list[12],
+        'last-address': data_list[13],
+        'time-3': data_list[14],
       }
       return temp_data;
     }).then((temp_data) => {

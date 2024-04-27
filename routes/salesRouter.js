@@ -132,7 +132,7 @@ router.post('/', function(req, res, next) {
               let handle = setTimeout(() => { 
                   eh.disconnect(); 
                   reject(); 
-              }, 30000); 
+              }, 300000); 
   //向EventHub注册事件的处理办法 
               eh.registerTxEvent(transactionID, (tx, code) => { 
                   clearTimeout(handle); 

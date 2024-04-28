@@ -174,6 +174,7 @@ router.post('/', function(req, res, next) {
       return 'Failed to send proposal due to error: ' + err.stack ? err.stack : 
           err; 
   }).then((response) => {
+      console.log(response);
       if (response.status === 'SUCCESS') { 
           console.log('Successfully sent transaction to the orderer.'); 
           res.render('register');

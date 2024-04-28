@@ -23,7 +23,7 @@ var options = {
     server_hostname: "peer0.org1.example.com" 
 };
 
-router.post('/', function(req, res, next) {
+router.post('/register', function(req, res, next) {
   var channel = {}; 
   var client = null; 
   var targets = []; 

@@ -140,7 +140,7 @@ router.post('/', function(req, res, next) {
                   eh.disconnect();
   
                   if (code !== 'VALID') { 
-                      console.error( 
+                      console.log( 
                           'The transaction was invalid, code = ' + code); 
                       reject(); 
                    } else { 
@@ -157,19 +157,19 @@ router.post('/', function(req, res, next) {
               console.log(' event promise all complete and testing complete'); 
                return results[0]; // the first returned value is from the 'sendPromise' which is from the 'sendTransaction()' call 
           }).catch((err) => { 
-              console.error( 
+              console.log( 
                   'Failed to send transaction and get notifications within the timeout period.' 
               ); 
               return 'Failed to send transaction and get notifications within the timeout period.'; 
            }); 
       } else { 
-          console.error( 
+          console.log( 
               'Failed to send Proposal or receive valid response. Response null or status is not 200. exiting...' 
           ); 
           return 'Failed to send Proposal or receive valid response. Response null or status is not 200. exiting...'; 
       } 
   }, (err) => { 
-      console.error('Failed to send proposal due to error: ' + err.stack ? err.stack : 
+      console.log('Failed to send proposal due to error: ' + err.stack ? err.stack : 
           err); 
       return 'Failed to send proposal due to error: ' + err.stack ? err.stack : 
           err; 
@@ -180,11 +180,11 @@ router.post('/', function(req, res, next) {
           res.render('register');
           return tx_id.getTransactionID(); 
       } else { 
-          console.error('Failed to order the transaction. Error code: ' + response.status); 
+          console.log('Failed to order the transaction. Error code: ' + response.status); 
           return 'Failed to order the transaction. Error code: ' + response.status; 
       } 
   }, (err) => { 
-      console.error('Failed to send transaction due to error: ' + err.stack ? err 
+      console.log('Failed to send transaction due to error: ' + err.stack ? err 
            .stack : err); 
       return 'Failed to send transaction due to error: ' + err.stack ? err.stack : 
           err; 

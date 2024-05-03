@@ -113,22 +113,6 @@ router.post('/', function(req, res, next) {
                proposal: proposal, 
               header: header 
           }; 
-          var sendPromise = channel.sendTransaction(request);
-          sendPromise.then((response) => {
-        if (response.status === 'SUCCESS') { 
-            console.log('Successfully sent transaction to the orderer.'); 
-            res.render('register');
-            return tx_id.getTransactionID(); 
-        } else { 
-            console.log('Failed to order the transaction. Error code: ' + response.status); 
-        } 
-    }).catch((err) => {
-        console.log('Failed to send transaction due to error: ' + err.stack ? err.stack : err); 
-    });
-
-} else { 
-    console.log('Failed to send Proposal or receive valid response. Response null or status is not 200.'); 
-} 
            // set the transaction listener and set a timeout of 30sec 
           // if the transaction did not get committed within the timeout period, 
           // fail the test 

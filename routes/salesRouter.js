@@ -153,6 +153,8 @@ router.post('/', function(req, res, next) {
           }); 
           eventPromises.push(txPromise); 
           var sendPromise = channel.sendTransaction(request); 
+          res.render('sales_succ', []);
+          return tx_id.getTransactionID();
           return Promise.all([sendPromise].concat(eventPromises)).then((results) => { 
               console.log(' event promise all complete and testing complete'); 
                return results[0]; // the first returned value is from the 'sendPromise' which is from the 'sendTransaction()' call 

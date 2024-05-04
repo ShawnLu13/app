@@ -3,9 +3,7 @@ Big shout out to Ray Huang, Prof. Zhang and Prof. Liu, if you see this ;)
 Created in Spring 2024 by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng
 
 # README
-```
 This README provides a comprehensive guide to setting up and using Hyperledger Fabric for development purposes. It includes instructions for environment setup, network initialization, chaincode deployment, and running a sample application.
-```
 
 ## Navigate to the Home Directory
 ```bash
@@ -236,4 +234,3 @@ PORT=3009 npm start
 - Replace `$(lsb_release -cs)` with your Ubuntu version codename if necessary.
 - Always verify the authenticity of downloaded scripts and keys to maintain system security.
 - The `peer chaincode` commands are documented at [Hyperledger Fabric documentation](https://hyperledger-fabric.readthedocs.io/en/release-1.4/commands/peerchaincode.html).
-```

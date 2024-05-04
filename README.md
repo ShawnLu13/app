@@ -1,6 +1,6 @@
-Extending our sincerest gratitude to teaching assistant Ray Huang and instructors Prof. Zhang and Prof. Liu, whose guidance and support have been instrumental throughout the course and this project. Their willingness to provide feedback and direction has helped us overcome many challenges and has undoubtedly enhanced the quality of our work.
+Big shout out to Ray Huang, Prof. Zhang and Prof. Liu, if you see this ;)
 
-Created in Spring 2024 by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng :)
+Created in Spring 2024 by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng
 
 # README
 ```

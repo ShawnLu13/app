@@ -4,6 +4,7 @@ We would like to extend our sincerest gratitude to the TA Ray Huang and instruct
 
 ```markdown
 # README
+This README provides a comprehensive guide to setting up and using Hyperledger Fabric for development purposes. It includes instructions for environment setup, network initialization, chaincode deployment, and running a sample application.
 
 ## Navigate to the Home Directory
 ```bash
@@ -90,8 +91,154 @@ apt-get install -y nodejs
 apt install build-essential
 ```
 
+```markdown
+# README
+
+## User Mode for Sheng
+To operate as the user `sheng`, use the following commands:
+
+```bash
+# switch to user
+su - sheng
+
+### User Environment Setup for Sheng
+
+```bash
+# Create a new folder for npm-global
+mkdir ~/.npm-global
+
+# Set the npm global path
+npm config set prefix '~/.npm-global'
+
+# Modify the profile file to include the new npm path
+vi .profile
+
+# Add the following line at the end of the .profile file
+export PATH=~/.npm-global/bin:$PATH
+
+# Apply the changes to the environment
+source ~/.profile
+```
+
+### Hyperledger Fabric Development Setup
+
+```bash
+# Create a directory for Hyperledger Fabric development
+mkdir ~/fabric-dev-servers && cd ~/fabric-dev-servers
+
+# Download Hyperledger Fabric v1.2 network helper scripts
+curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz
+
+# Unpack the downloaded file
+tar -xvf fabric-dev-servers.tar.gz
+
+# Set the Hyperledger Fabric version and run the download script
+export FABRIC_VERSION=hlfv12
+./downloadFabric.sh
+
+# Install a specific version of cryptography to avoid conflicts
+pip show cryptography 
+pip3 install cryptography==3.2
+
+# Start the Hyperledger Fabric network
+./startFabric.sh
+
+# Stop the Hyperledger Fabric network
+./stopFabric.sh
+
+# List Docker containers
+docker ps
+
+# Return to the previous directory level
+cd ..
+```
+
+### Hyperledger Fabric Samples and Chaincode
+
+```bash
+# Set the Hyperledger Fabric samples path
+vi .profile  
+export PATH=~/fabric-samples/bin:$PATH
+
+# Apply the changes to the environment
+source ~/.profile
+
+# Navigate to the Hyperledger Fabric samples
+cd fabric-samples
+
+# List the contents of the samples directory
+ls -lah 
+
+# Navigate to the chaincode directory and prepare the usedcars chaincode
+cd chaincode
+mkdir -p usedcars/go
+cd usedcars/go
+curl -o userdcars.go https://raw.githubusercontent.com/ShawnLu13/app/main/userdcars.go
+
+# Verify the file upload
+ls
+
+# Check the usedcars.go file
+vi userdcars.go
+:q!
+
+# Navigate to the first-network directory
+cd ../../../first-network
+
+# Modify the docker-compose-cli.yaml and base/peer-base.yaml for Go's pure-Go DNS resolver
+vi docker-compose-cli.yaml
+vi base/peer-base.yaml
+# Add the environment variable GODEBUG=netdns=go
+
+# Bring down the network if previously up
+./byfn.sh down
+
+# Clean up Docker containers
+docker ps -qa | xargs docker stop
+docker ps -qa | xargs docker rm
+
+# Generate network initialization configuration
+./byfn.sh generate
+
+# Launch the Hyperledger Fabric network
+./byfn.sh up
+
+# Check running Docker containers
+docker ps
+docker ps -a --filter "name=cli"
+
+# Enter the CLI container to install and manipulate chaincode
+docker exec -it cli bash
+
+# Set environment variables for the peer and install the usedcars chaincode
+# Repeat the following set of commands for each organization's peer
+peer chaincode install -n usedcars -p github.com/chaincode/usedcars/go/ -v 1.0
+
+# Instantiate the usedcars chaincode on the channel
+peer chaincode instantiate -o orderer.example.com:7050 --tls --cafile <path to cafile> -C mychannel -n usedcars -v 1.0 -c '{"Args":["ProductID"]}' -P "OR ('Org1MSP.peer','Org2MSP.peer')"
+
+# List the instantiated chaincodes on the channel
+peer chaincode list --instantiated -C mychannel
+
+# Exit the CLI container
+exit
+
+# Navigate to the first-network directory and clone the app repository
+cd /home/sheng/fabric-samples/first-network/
+git clone https://github.com/ShawnLu13/app.git 
+cd app
+npm install
+
+# Start the app on port 3009
+PORT=3009 npm start
+
+# Access the web application by opening localhost:3009 in a web browser
+```
+
+
 ## Notes
 - Ensure you have the necessary permissions to execute these commands, using `sudo` if required.
 - Replace `$(lsb_release -cs)` with your Ubuntu version codename if necessary.
 - Always verify the authenticity of downloaded scripts and keys to maintain system security.
+- The `peer chaincode` commands are documented at [Hyperledger Fabric documentation](https://hyperledger-fabric.readthedocs.io/en/release-1.4/commands/peerchaincode.html).
 ```

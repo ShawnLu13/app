@@ -7,8 +7,8 @@ This README provides a comprehensive guide to setting up and using Hyperledger F
 
 ## Navigate to the Home Directory
 ```bash
-# Change directory to /home/user
-cd /home/user
+# Suppose that you have a user called sheng. Change directory to /home/sheng
+cd /home/sheng
 ```
 
 ## Manage Software Packages with `dpkg`
@@ -91,12 +91,12 @@ apt install build-essential
 ```
 
 ## Hyperledger and Website Setup
-To operate as the user `user`, use the following commands:
+To operate as the user `sheng`, use the following commands:
 ```bash
-# switch to user
-su - user
+# switch to user sheng
+su - sheng
 
-### User Environment Setup for user
+### User Environment Setup for sheng
 
 ```bash
 # Create a new folder for npm-global
@@ -243,7 +243,7 @@ exit
 ### Start the Website
 ```bash
 # Navigate to the first-network directory and clone the app repository
-cd /home/user/fabric-samples/first-network/
+cd /home/sheng/fabric-samples/first-network/
 git clone https://github.com/ShawnLu13/app.git 
 cd app
 npm install

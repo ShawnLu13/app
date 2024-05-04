@@ -8,8 +8,8 @@ This README provides a comprehensive guide to setting up and using Hyperledger F
 
 ## Navigate to the Home Directory
 ```bash
-# Change directory to /home/sheng
-cd /home/sheng
+# Change directory to /home/user
+cd /home/user
 ```
 
 ## Manage Software Packages with `dpkg`
@@ -91,17 +91,14 @@ apt-get install -y nodejs
 apt install build-essential
 ```
 
-```markdown
-# README
-
-## User Mode for Sheng
-To operate as the user `sheng`, use the following commands:
+## User Mode for user
+To operate as the user `user`, use the following commands:
 
 ```bash
 # switch to user
-su - sheng
+su - user
 
-### User Environment Setup for Sheng
+### User Environment Setup for user
 
 ```bash
 # Create a new folder for npm-global
@@ -224,7 +221,7 @@ peer chaincode list --instantiated -C mychannel
 exit
 
 # Navigate to the first-network directory and clone the app repository
-cd /home/sheng/fabric-samples/first-network/
+cd /home/user/fabric-samples/first-network/
 git clone https://github.com/ShawnLu13/app.git 
 cd app
 npm install

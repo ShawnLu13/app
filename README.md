@@ -1,10 +1,9 @@
 ```markdown
 # README
 
-Created in Spring 2024
-Created by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng :)
+Created in Spring 2024 by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng :)
 
-We would like to extend our sincerest gratitude to the teaching assistant Ray Huang and instructor Prof. Zhang and Prof. Liu, whose guidance and support have been instrumental throughout the course and this project. Their willingness to provide feedback and direction has helped us overcome many challenges and has undoubtedly enhanced the quality of our work.
+We would like to extend our sincerest gratitude to the TA Ray Huang and instructors Prof. Zhang and Prof. Liu, whose guidance and support have been instrumental throughout the course and this project. Their willingness to provide feedback and direction has helped us overcome many challenges and has undoubtedly enhanced the quality of our work.
 
 ## Navigate to the Home Directory
 ```bash

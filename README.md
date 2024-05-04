@@ -1,10 +1,11 @@
 Created in Spring 2024 by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng :)
 
-We would like to extend our sincerest gratitude to the TA Ray Huang and instructors Prof. Zhang and Prof. Liu, whose guidance and support have been instrumental throughout the course and this project. Their willingness to provide feedback and direction has helped us overcome many challenges and has undoubtedly enhanced the quality of our work.
+Big shout out to TA Ray Huang and instructors Prof. Zhang and Prof. Liu, whose guidance and support have been instrumental throughout the course and this project. Their willingness to provide feedback and direction has helped us overcome many challenges and has undoubtedly enhanced the quality of our work.
 
-```markdown
 # README
+```
 This README provides a comprehensive guide to setting up and using Hyperledger Fabric for development purposes. It includes instructions for environment setup, network initialization, chaincode deployment, and running a sample application.
+```
 
 ## Navigate to the Home Directory
 ```bash
@@ -93,7 +94,6 @@ apt install build-essential
 
 ## User Mode for user
 To operate as the user `user`, use the following commands:
-
 ```bash
 # switch to user
 su - user
@@ -118,7 +118,6 @@ source ~/.profile
 ```
 
 ### Hyperledger Fabric Development Setup
-
 ```bash
 # Create a directory for Hyperledger Fabric development
 mkdir ~/fabric-dev-servers && cd ~/fabric-dev-servers
@@ -151,7 +150,6 @@ cd ..
 ```
 
 ### Hyperledger Fabric Samples and Chaincode
-
 ```bash
 # Set the Hyperledger Fabric samples path
 vi .profile  

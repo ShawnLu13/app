@@ -1,3 +1,7 @@
+// Chaincode is based on TA Ray's usedcars project as a template. 
+// Because there are many path dependencies using the name userdcars, for the sake of simplicity we did not change the name of this go file. 
+// Hope it will not cause any misunderstanding.
+
 package main
 
 import (

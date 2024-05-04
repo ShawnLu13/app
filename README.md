@@ -1,6 +1,6 @@
-Created in Spring 2024 by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng :)
-
 Big shout out to TA Ray Huang and instructors Prof. Zhang and Prof. Liu, whose guidance and support have been instrumental throughout the course and this project. Their willingness to provide feedback and direction has helped us overcome many challenges and has undoubtedly enhanced the quality of our work.
+
+Created in Spring 2024 by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng :)
 
 # README
 ```

@@ -1,4 +1,4 @@
-Big shout out to TA Ray Huang and instructors Prof. Zhang and Prof. Liu, whose guidance and support have been instrumental throughout the course and this project. Their willingness to provide feedback and direction has helped us overcome many challenges and has undoubtedly enhanced the quality of our work.
+Extending our sincerest gratitude to teaching assistant Ray Huang and instructors Prof. Zhang and Prof. Liu, whose guidance and support have been instrumental throughout the course and this project. Their willingness to provide feedback and direction has helped us overcome many challenges and has undoubtedly enhanced the quality of our work.
 
 Created in Spring 2024 by Sheng Lu, Xilong Wu, Yujia Liang, Jiawen Liu, Tianrui Li and Jin Zheng :)
 
@@ -164,7 +164,7 @@ cd fabric-samples
 # List the contents of the samples directory
 ls -lah 
 
-# Navigate to the chaincode directory and prepare the usedcars chaincode
+# Navigate to the chaincode directory and prepare the usedcars chaincode (this traceability project is based on TA Ray's usedcars project as a template, big S/O to Ray if you see this)
 cd chaincode
 mkdir -p usedcars/go
 cd usedcars/go

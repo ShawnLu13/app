@@ -90,7 +90,7 @@ apt-get install -y nodejs
 apt install build-essential
 ```
 
-## User Mode for user
+## Hyperledger and Website Setup
 To operate as the user `user`, use the following commands:
 ```bash
 # switch to user
@@ -205,6 +205,28 @@ docker exec -it cli bash
 
 # Set environment variables for the peer and install the usedcars chaincode
 # Repeat the following set of commands for each organization's peer
+CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+CORE_PEER_LOCALMSPID="Org1MSP"
+CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+peer chaincode install -n usedcars -p github.com/chaincode/usedcars/go/ -v 1.0
+
+CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+CORE_PEER_ADDRESS=peer1.org1.example.com:7051
+CORE_PEER_LOCALMSPID="Org1MSP"
+CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/ca.crt
+peer chaincode install -n usedcars -p github.com/chaincode/usedcars/go/ -v 1.0
+
+CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+CORE_PEER_ADDRESS=peer0.org2.example.com:7051
+CORE_PEER_LOCALMSPID="Org2MSP"
+CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+peer chaincode install -n usedcars -p github.com/chaincode/usedcars/go/ -v 1.0
+
+CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+CORE_PEER_ADDRESS=peer1.org2.example.com:7051
+CORE_PEER_LOCALMSPID="Org2MSP"
+CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/ca.crt
 peer chaincode install -n usedcars -p github.com/chaincode/usedcars/go/ -v 1.0
 
 # Instantiate the usedcars chaincode on the channel
@@ -216,6 +238,10 @@ peer chaincode list --instantiated -C mychannel
 # Exit the CLI container
 exit
 
+```
+
+### Start the Website
+```bash
 # Navigate to the first-network directory and clone the app repository
 cd /home/user/fabric-samples/first-network/
 git clone https://github.com/ShawnLu13/app.git 
